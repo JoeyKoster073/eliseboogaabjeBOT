@@ -53,7 +53,7 @@ module.exports = {
         if(message.member.roles.cache.has('637282843025997825')){
         let reaction = await message.channel.send({embed: reactionrolesEmbed})
         reaction.react(emoji1);
-        reaction.react(emoji2);
+        // reaction.react(emoji2);
         reaction.react(emoji3);
 
         } else {
