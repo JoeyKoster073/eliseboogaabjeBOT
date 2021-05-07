@@ -6,11 +6,11 @@ module.exports = {
         const channel = '763367482987511818';
 
         const role1 = message.guild.roles.cache.find(role => role.name === "🚙Rocket League");
-        const role2 = message.guild.roles.cache.find(role => role.name === "🕵️Among Us");
+        // const role2 = message.guild.roles.cache.find(role => role.name === "🕵️Among Us");
         const role3 = message.guild.roles.cache.find(role => role.name === "⛳Golf With Your Friends");
 
         const emoji1 = '🏎️';
-        const emoji2 = '🕵️';
+        // const emoji2 = '🕵️';
         const emoji3 = '⛳';
 
         const reactionrolesEmbed = {
@@ -23,10 +23,10 @@ module.exports = {
                 name: "🏎️ | Rocket League",
                 value: "Speel jij Rocket League? Reageer dan met de emoji hieronder!"
                 },
-                {
-                    name: "🕵️ | Among Us",
-                    value: "Speel jij Among Us? Reageer dan met de emoji hieronder!"
-                },
+                // {
+                //     name: "🕵️ | Among Us",
+                //     value: "Speel jij Among Us? Reageer dan met de emoji hieronder!"
+                // },
                 {
                     name: "⛳ | Golf With Your Friends",
                     value: "Speel jij Golf With Your Friends? Reageer dan met de emoji hieronder!"
@@ -71,9 +71,9 @@ module.exports = {
                 if (reaction.emoji.name === emoji1) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(role1);
                 }
-                if (reaction.emoji.name === emoji2) {
-                    await reaction.message.guild.members.cache.get(user.id).roles.add(role2);
-                }
+                // if (reaction.emoji.name === emoji2) {
+                //     await reaction.message.guild.members.cache.get(user.id).roles.add(role2);
+                // }
                 if (reaction.emoji.name === emoji3) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(role3);
                 }
@@ -95,9 +95,9 @@ module.exports = {
                 if (reaction.emoji.name === emoji1) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(role1);
                 }
-                if (reaction.emoji.name === emoji2) {
-                    await reaction.message.guild.members.cache.get(user.id).roles.remove(role2);
-                }
+                // if (reaction.emoji.name === emoji2) {
+                //     await reaction.message.guild.members.cache.get(user.id).roles.remove(role2);
+                // }
                 if (reaction.emoji.name === emoji3) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(role3);
                 }
