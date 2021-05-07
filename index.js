@@ -1,4 +1,5 @@
 const botConfig = require("./config.json");
+const { badwords } = require("./data.json")
 const Discord = require('discord.js');
 
 const config = require('./config.json');
@@ -83,7 +84,45 @@ client.on('message', message =>{
         client.commands.get('ban').execute(message, args);
     } else if(command === 'clear'){
         client.commands.get('clear').execute(message, args);
+    } else if(command === 'leden'){
+        client.commands.get('leden').execute(message, args, client);
+    } else if(command === 'socials'){
+        client.commands.get('socials').execute(message, args);
     }
 });
+
+client.on("message", async message => {
+    const errorEmbed = {
+        color: 15158332,
+        fields: [{
+            name: "Error met sturen van je bericht.",
+            value: "**Reden:** *Wat je zojuist probeerde te sturen is niet toegestaan!*"
+            }],
+            
+        footer: {
+                text: '© Eliseboogaabje',
+                icon_url: 'https://media.discordapp.net/attachments/657346394113441812/840242059088494652/EB.png',
+        },
+    };
+    if (message.author.bot) return;
+    if(message.member.roles.cache.has('637282843025997825')) {
+        return; 
+    } else if(message.member.roles.cache.has('678608648485863424')) {
+        return; 
+    } else {
+        let confirm = false;
+        var i;
+        for(i = 0;i < badwords.length; i++) {
+        
+        if(message.content.toLowerCase().includes(badwords[i].toLowerCase()))
+            confirm = true;
+      
+        }
+        if(confirm) {
+            message.delete()
+            return message.channel.send({embed: errorEmbed})
+        }  
+    }
+})
 
 client.login(process.env.token);
