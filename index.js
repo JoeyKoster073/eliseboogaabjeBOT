@@ -146,22 +146,22 @@ client.on("message", async message => {
     }
 })
 
-client.on("presenceUpdate", (oldPresence, newPresence) => {
-    const channel = client.channels.cache.get('637283684650844190');
-        if (!newPresence.activities) return false;
-        newPresence.activities.forEach(activity => {
-                if (activity.type == "STREAMING") {
-                    if(newPresence.member.roles.cache.has('634107620231479298')) {
-                        channel.send(`Hallo @everyone, ik ben live op Twitch, kom gezellig kijken! ${activity.url}`)
-                    } else if(newPresence.member.roles.cache.has('693823568626319400')) {
-                        channel.send(`**${newPresence.member.user.username}** is weer live, neem zeker even een kijkje! ${activity.url}`)
-                    } else {
-                        return;
-                        }
-                } else {
-                    return;
-                    }    
-        });
-});
+// client.on("presenceUpdate", (oldPresence, newPresence) => {
+//     const channel = client.channels.cache.get('637283684650844190');
+//         if (!newPresence.activities) return false;
+//         newPresence.activities.forEach(activity => {
+//                 if (activity.type == "STREAMING") {
+//                     if(newPresence.member.roles.cache.has('634107620231479298')) {
+//                         channel.send(`Hallo @everyone, ik ben live op Twitch, kom gezellig kijken! ${activity.url}`)
+//                     } else if(newPresence.member.roles.cache.has('693823568626319400')) {
+//                         channel.send(`**${newPresence.member.user.username}** is weer live, neem zeker even een kijkje! ${activity.url}`)
+//                     } else {
+//                         return;
+//                         }
+//                 } else {
+//                     return;
+//                     }    
+//         });
+// });
 
 client.login(process.env.token);
