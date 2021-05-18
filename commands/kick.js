@@ -1,7 +1,8 @@
 module.exports = {
     name: 'kick',
     description: "This command kicks a member!",
-    execute(message, args){
+    execute(message, args, client){
+        const channel = client.channels.cache.get('844262954920312863');
         const errorEmbed = {
             color: 15158332,
             fields: [{
@@ -32,6 +33,24 @@ module.exports = {
             if(target){
                 const memberTarget = message.guild.members.cache.get(target.id);
                 memberTarget.kick();
+                const logEmbed = {
+                    color: 15158332,
+                    title: "Kick",
+                    fields: [{
+                        name: `${message.member.user.tag} voerde de kick command uit.`,
+                        value: `<@${memberTarget.user.id}> is gekicked van de discord.`
+                        },
+                        {
+                            name: `Reden:`,
+                            value: args.join(' ')
+                            }
+                    ],
+                        
+                    footer: {
+                            text: '© Eliseboogaabje',
+                            icon_url: 'https://media.discordapp.net/attachments/657346394113441812/840242059088494652/EB.png',
+                    },
+                };
                 const kickEmbed = {
                     color: 15158332,
                     fields: [{
@@ -49,6 +68,50 @@ module.exports = {
                     },
                 };
                 message.channel.send({embed: kickEmbed});
+                channel.send({embed: logEmbed});
+            } else {
+                message.channel.send({embed: unfindEmbed});
+            }
+        } else if(message.member.roles.cache.has('678608648485863424')){
+            if(target){
+                const memberTarget = message.guild.members.cache.get(target.id);
+                memberTarget.kick();
+                const logEmbed = {
+                    color: 15158332,
+                    title: "Kick",
+                    fields: [{
+                        name: `${message.member.user.tag} voerde de kick command uit.`,
+                        value: `<@${memberTarget.user.id}> is gekicked van de discord.`
+                        },
+                        {
+                            name: `Reden:`,
+                            value: args.join(' ')
+                            }
+                    ],
+                        
+                    footer: {
+                            text: '© Eliseboogaabje',
+                            icon_url: 'https://media.discordapp.net/attachments/657346394113441812/840242059088494652/EB.png',
+                    },
+                };
+                const kickEmbed = {
+                    color: 15158332,
+                    fields: [{
+                        name: "Gekicked",
+                        value: `<@${memberTarget.user.id}> is gekicked!`
+                        },
+                        {
+                        name: "Reden",
+                        value: args.join(' ')
+                        }],
+                        
+                    footer: {
+                            text: '© Eliseboogaabje',
+                            icon_url: 'https://media.discordapp.net/attachments/657346394113441812/840242059088494652/EB.png',
+                    },
+                };
+                message.channel.send({embed: kickEmbed});
+                channel.send({embed: logEmbed});
             } else {
                 message.channel.send({embed: unfindEmbed});
             }

@@ -8,16 +8,16 @@ module.exports = {
                 url: 'https://media.discordapp.net/attachments/657346394113441812/840242059088494652/EB.png',
             },
             fields: [{
-                name: "<:Instagram:722377322241589288> | Instagram",
+                name: "<:anus:840313148233613343> | Instagram",
                 value: "Eliseboogaabje",
                 },
                 {
-                    name: "<:Snapchat:722377407612583996> | Snapchat",
+                    name: "<:anus:840313148233613343> | Snapchat",
                     value: "Eliseboogaabje",
                 },
                 {
-                    name: "<:twitch:722377894390661124> | Twitch",
-                    value: "https://twitch.tv/eliseboogaabje",
+                    name: "<:anus:840313148233613343> | Twitch",
+                    value: "twitch.tv/eliseboogaabje",
                 }],
             footer: {
                     text: '© Eliseboogaabje',
