@@ -8,15 +8,15 @@ module.exports = {
                 url: 'https://media.discordapp.net/attachments/657346394113441812/840242059088494652/EB.png',
             },
             fields: [{
-                name: "<:anus:840313148233613343> | Instagram",
+                name: "<:Instagram:722377322241589288> | Instagram",
                 value: "Eliseboogaabje",
                 },
                 {
-                    name: "<:anus:840313148233613343> | Snapchat",
+                    name: "<:Snapchat:722377407612583996> | Snapchat",
                     value: "Eliseboogaabje",
                 },
                 {
-                    name: "<:anus:840313148233613343> | Twitch",
+                    name: "<:twitch:722377894390661124> | Twitch",
                     value: "twitch.tv/eliseboogaabje",
                 }],
             footer: {
