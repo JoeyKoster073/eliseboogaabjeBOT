@@ -100,7 +100,7 @@ client.on("message", async message => {
     const channel = client.channels.cache.get('844260393215983637');
     const logEmbed = {
         color: 15158332,
-        title: "Ban",
+        title: "Filter",
         fields: [{
             name: `Bericht van ${message.member.user.tag} verwijderd.`,
             value: `**Bericht:** ${args.join(' ')}`
